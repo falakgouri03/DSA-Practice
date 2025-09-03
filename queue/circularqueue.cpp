@@ -65,13 +65,12 @@ void display()
     else
     {
         cout << "Queue elements: ";
-        int i = front;
         while (true)
         {
-            cout << q[i] << " ";
-            if (i == rear)
+            cout << q[front] << " ";
+            if (front == rear)
                 break;
-            i = (i + 1) % size;
+            front= (front + 1) % size;
         }
         cout << endl;
     }

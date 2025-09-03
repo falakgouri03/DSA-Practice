@@ -20,10 +20,15 @@ void enqueue(int value) {
         return;
     }
     else if(front == -1) 
-    front = 0;
-    rear++;
-    q[rear] = value;
-    cout << value << " inserted into queue." << endl;
+    {
+        front = 0;
+    }
+    else
+    {
+        rear++;
+        q[rear] = value;
+        cout << value << " inserted into queue." << endl;
+    }
 }
 
 void dequeue() {
@@ -31,8 +36,11 @@ void dequeue() {
         cout << "Underflow" << endl;
         return;
     }
-    cout << q[front] << " deleted from queue." << endl;
-    front++;
+    else{
+        int ele=q[front];
+        cout <<ele<< " deleted from queue." << endl;
+        front++;
+    }
 }
 
 void display() {

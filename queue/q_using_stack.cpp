@@ -24,32 +24,31 @@ void push2(int val){
         return;
     }
     else{
-        s2[++top2]=val;
+        top2++;
+        s2[top2]=val;
     }
     
 }
 
 int pop1(){
-    int v;
     if(top1==-1){
         cout<<"Underflow";
         return -1;
     }
     else{
-        v=s1[top1];
+        int v=s1[top1];
         top1--;
            return v;
     }
 }
 
 int pop2(){
-    int x;
     if(top2==-1){
         cout<<"Underflow"<<endl;
         return -1;
     }
     else{
-        x=s2[top2];
+       int x=s2[top2];
         top2--;
         return x;
     }
@@ -72,16 +71,18 @@ void dequeue(){
     
 }
 void display(){
+    cout<<"queue elements :";
     for(int i=0;i<=top1;i++){
         cout<<s1[i]<<" ";
     }
+    cout<<endl;
 }
 int main(){
     enque(10);
     enque(20);
     enque(30);
+    display();
     dequeue();
-    enque(40);
     display();
     return 0;
     
